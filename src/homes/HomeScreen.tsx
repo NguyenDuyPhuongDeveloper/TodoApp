@@ -14,6 +14,7 @@ import { Element4, SearchNormal1 } from 'iconsax-react-native'
 import { Notification } from 'iconsax-react-native'
 import Tag from '../components/TagComponent'
 import SpaceComponent from '../components/SpaceComponent'
+import CircularComponent from '../components/CircularComponent'
 // import IonIcons from 'react-native-vector-icons/Ionicons'
 
 
@@ -53,7 +54,7 @@ const HomeScreen = () => {
                             </RowComponent>
                         </View>
                         <View>
-                            <TextComponent text="CircleChar" />
+                            <CircularComponent value={80}/>
                         </View>
                     </RowComponent>
                 </CardComponent>
