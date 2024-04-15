@@ -3,7 +3,8 @@ import React from 'react'
 import { globalStyles } from '../styles/globalStyles'
 import { StyleProp, ViewStyle } from 'react-native';
 
-interface Props {
+interface Props
+{
     children: React.ReactNode;
     justify?:
     | 'center'
@@ -17,7 +18,8 @@ interface Props {
     styles?: StyleProp<ViewStyle>;
 }
 
-const RowComponent = (props: Props) => {
+const RowComponent = ( props: Props ) =>
+{
     const { children, justify, onPress, styles } = props;
     const localStyle = [
         globalStyles.row,
@@ -33,7 +35,7 @@ const RowComponent = (props: Props) => {
             onPress={onPress ? () => onPress() : undefined}>
             {children}
         </TouchableOpacity>
-    ) : (<View style={localStyle}>{children}</View>
+    ) : ( <View style={localStyle}>{children}</View>
     );
 }
 

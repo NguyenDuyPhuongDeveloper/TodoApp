@@ -5,13 +5,15 @@ import { fontFamilies } from '../constants/fontFamilies';
 import { colors } from '../constants/colors';
 import TextComponent from './TextComponent';
 
-interface Props {
+interface Props
+{
     text: string,
     size?: number,
     font?: string,
     color?: string
 }
-const TitleComponent = (props: Props) => {
+const TitleComponent = ( props: Props ) =>
+{
     const { text, size, font, color } = props;
     return (
         <TextComponent

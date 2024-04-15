@@ -5,16 +5,18 @@ import { fontFamilies } from '../constants/fontFamilies';
 import { colors } from '../constants/colors';
 import { TextStyle } from 'react-native';
 
-interface Props {
-    text: string,
-    size?: number,
-    font?: string,
-    color?: string,
-    flex?: number,
-    styles?: StyleProp<TextStyle>,
+interface Props
+{
+  text: string,
+  size?: number,
+  font?: string,
+  color?: string,
+  flex?: number,
+  styles?: StyleProp<TextStyle>,
 }
-const TextComponent = (props: Props) => {
-    const { text, size, font, color, flex, styles } = props;
+const TextComponent = ( props: Props ) =>
+{
+  const { text, size, font, color, flex, styles } = props;
   return (
     <Text style={[
       globalStyles.text,

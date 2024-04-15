@@ -2,14 +2,16 @@ import { View, Text } from 'react-native'
 import React, { Children } from 'react'
 import { globalStyles } from '../styles/globalStyles'
 
-interface Props { 
-    children: React.ReactNode,
+interface Props
+{
+  children: React.ReactNode,
 }
 
-const SectionComponent = (props: Props) => {
-    const { children } = props;
+const SectionComponent = ( props: Props ) =>
+{
+  const { children } = props;
   return (
-    <View style={[globalStyles.section]}>
+    <View style={[ globalStyles.section ]}>
       {children}
     </View>
   );
