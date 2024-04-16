@@ -1,28 +1,28 @@
 import React from 'react'
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
 
-import CardComponent from '../components/CardComponent'
-import Container from '../components/Container'
-import RowComponent from '../components/RowComponent'
-import SectionComponent from '../components/SectionComponent'
-import TextComponent from '../components/TextComponent'
-import TitleComponent from '../components/TitleComponent'
-import { colors } from '../constants/colors'
-import { globalStyles } from '../styles/globalStyles'
+import CardComponent from '../../components/CardComponent'
+import Container from '../../components/Container'
+import RowComponent from '../../components/RowComponent'
+import SectionComponent from '../../components/SectionComponent'
+import TextComponent from '../../components/TextComponent'
+import TitleComponent from '../../components/TitleComponent'
+import { colors } from '../../constants/colors'
+import { globalStyles } from '../../styles/globalStyles'
 
 import { Add, Edit2, Element4, Notification, SearchNormal1 } from 'iconsax-react-native'
-import AvatarGroup from '../components/AvatarGroup'
-import CardImageComponent from '../components/CardImageComponent'
-import CircularComponent from '../components/CircularComponent'
-import ProgressBarComponent from '../components/ProgressBarComponent'
-import SpaceComponent from '../components/SpaceComponent'
-import Tag from '../components/TagComponent'
-import { fontFamilies } from '../constants/fontFamilies'
+import AvatarGroup from '../../components/AvatarGroup'
+import CardImageComponent from '../../components/CardImageComponent'
+import CircularComponent from '../../components/CircularComponent'
+import ProgressBarComponent from '../../components/ProgressBarComponent'
+import SpaceComponent from '../../components/SpaceComponent'
+import Tag from '../../components/TagComponent'
+import { fontFamilies } from '../../constants/fontFamilies'
 
 
 
 
-const HomeScreen = () =>
+const HomeScreen = ( { navigation }: any ) =>
 {
     return (
         <View style={{ flex: 1 }}>
@@ -124,6 +124,7 @@ const HomeScreen = () =>
                 alignItems: 'center',
             }}>
                 <TouchableOpacity
+                    onPress={() => navigation.navigate( 'AddNewTask' )}
                     activeOpacity={1}
                     style={[ globalStyles.row,
                     {
