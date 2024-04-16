@@ -7,11 +7,11 @@ import { colors } from '../constants/colors'
 
 interface Props
 {
-    text: string,
-    color?: string,
-    tagStyles?: StyleProp<ViewStyle>,
-    textStyles?: StyleProp<TextStyle>,
-    onPress?: () => void,
+    text: string;
+    color?: string;
+    tagStyles?: StyleProp<ViewStyle>;
+    textStyles?: StyleProp<TextStyle>;
+    onPress?: () => void;
 }
 const TagComponent = ( props: Props ) =>
 {

@@ -4,7 +4,7 @@ import { globalStyles } from '../styles/globalStyles'
 
 interface Props
 {
-  children: React.ReactNode,
+  children: React.ReactNode;
 }
 
 const SectionComponent = ( props: Props ) =>

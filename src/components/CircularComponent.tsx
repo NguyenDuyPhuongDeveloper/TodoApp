@@ -7,10 +7,10 @@ import { fontFamilies } from '../constants/fontFamilies';
 
 interface Props
 {
-  value: number,
-  maxValue?: number,
-  color?: string,
-  radius?: number,
+  value: number;
+  maxValue?: number;
+  color?: string;
+  radius?: number;
 }
 
 const CircularComponent = ( props: Props ) =>

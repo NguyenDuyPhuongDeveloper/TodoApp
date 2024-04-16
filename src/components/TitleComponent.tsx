@@ -7,10 +7,10 @@ import TextComponent from './TextComponent';
 
 interface Props
 {
-    text: string,
-    size?: number,
-    font?: string,
-    color?: string
+    text: string;
+    size?: number;
+    font?: string;
+    color?: string;
 }
 const TitleComponent = ( props: Props ) =>
 {

@@ -4,8 +4,8 @@ import React from 'react'
 
 interface Props
 {
-    width?: number,
-    height?: number,
+    width?: number;
+    height?: number;
 }
 const SpaceComponent = ( props: Props ) =>
 {

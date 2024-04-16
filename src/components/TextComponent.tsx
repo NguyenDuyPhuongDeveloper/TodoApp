@@ -7,12 +7,12 @@ import { TextStyle } from 'react-native';
 
 interface Props
 {
-  text: string,
-  size?: number,
-  font?: string,
-  color?: string,
-  flex?: number,
-  styles?: StyleProp<TextStyle>,
+  text: string;
+  size?: number;
+  font?: string;
+  color?: string;
+  flex?: number;
+  styles?: StyleProp<TextStyle>;
 }
 const TextComponent = ( props: Props ) =>
 {
