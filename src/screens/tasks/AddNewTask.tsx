@@ -1,12 +1,15 @@
+import React, { useState, useEffect } from 'react'
 import { Button, View } from 'react-native'
-import React from 'react'
 import Container from '../../components/Container'
-import InputComponent from '../../components/InputComponent'
-import SectionComponent from '../../components/SectionComponent'
-import { TaskModel } from '../../models/TaskModel'
 import DateTimePickerComponent from '../../components/DateTimePickerComponent'
+import DropdownPicker from '../../components/DropdownPicker'
+import InputComponent from '../../components/InputComponent'
 import RowComponent from '../../components/RowComponent'
+import SectionComponent from '../../components/SectionComponent'
 import SpaceComponent from '../../components/SpaceComponent'
+import { TaskModel } from '../../models/TaskModel'
+import { SelectModel } from '../../models/SelectModel'
+import firestore from '@react-native-firebase/firestore'
 
 const initValue: TaskModel = {
     title: '',
@@ -21,8 +24,39 @@ const initValue: TaskModel = {
 
 const AddNewTask = ( { navigation }: any ) =>
 {
-    const [ taskDetail, setTaskDetail ] = React.useState<TaskModel>( initValue );
-    const handleChangeValue = ( id: string, value: string | Date ) =>
+    const [ taskDetail, setTaskDetail ] = useState<TaskModel>( initValue );
+    const [ userSelect, setUserSelect ] = useState<SelectModel[]>( [] );
+    useEffect( () =>
+    {
+        handleGetAllUsers();
+    }, [] );
+
+    const handleGetAllUsers = async () =>
+    {
+        await firestore().collection( 'users' ).get().then( ( snap ) =>
+        {
+            if ( snap.empty )
+            {
+                console.log( 'Users data not found' );
+            }
+            else
+            {
+                let temp: SelectModel[] = [];
+                snap.forEach( ( doc ) =>
+                {
+                    const data = doc.data();
+                    temp.push( { label: data.email, value: doc.id } );
+                } )
+                setUserSelect( temp );
+            }
+        } )
+            .catch( ( error: any ) => 
+            {
+                console.log( `Can not get user. ${ error.message }` )
+            } );
+    }
+
+    const handleChangeValue = ( id: string, value: string | string[] | Date ) =>
     {
         const item: any = { ...taskDetail };
         item[ id ] = value;
@@ -74,6 +108,12 @@ const AddNewTask = ( { navigation }: any ) =>
                             title='End time' />
                     </View>
                 </RowComponent>
+                <DropdownPicker
+                    selected={taskDetail.uids}
+                    items={userSelect}
+                    onSelect={val => handleChangeValue( 'uids', val )}
+                    multiple
+                    title='Members' />
             </SectionComponent>
             <SectionComponent>
                 <Button title="Save" onPress={handleAddNewTask} />

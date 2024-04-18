@@ -47,7 +47,7 @@ const InputComponent = ( props: Props ) =>
                             {
                                 margin: 0,
                                 padding: 0,
-                                paddingVertical: 6,
+                                paddingVertical: 0,
                                 flex: 0,
                             } ]}
                         value={value}
