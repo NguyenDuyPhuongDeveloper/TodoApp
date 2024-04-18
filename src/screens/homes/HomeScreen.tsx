@@ -10,7 +10,7 @@ import TitleComponent from '../../components/TitleComponent'
 import { colors } from '../../constants/colors'
 import { globalStyles } from '../../styles/globalStyles'
 
-import { Add, Edit2, Element4, Notification, SearchNormal1 } from 'iconsax-react-native'
+import { Add, Edit2, Element4, Logout, Notification, SearchNormal1 } from 'iconsax-react-native'
 import AvatarGroup from '../../components/AvatarGroup'
 import CardImageComponent from '../../components/CardImageComponent'
 import CircularComponent from '../../components/CircularComponent'
@@ -18,15 +18,17 @@ import ProgressBarComponent from '../../components/ProgressBarComponent'
 import SpaceComponent from '../../components/SpaceComponent'
 import Tag from '../../components/TagComponent'
 import { fontFamilies } from '../../constants/fontFamilies'
+import auth from '@react-native-firebase/auth'
 
 
 
 
 const HomeScreen = ( { navigation }: any ) =>
 {
+    const user = auth().currentUser;
     return (
         <View style={{ flex: 1 }}>
-            <Container>
+            <Container isScroll>
                 <SectionComponent>
                     <RowComponent justify='space-between'>
                         <Element4 size={24} color={colors.desc} />
@@ -34,8 +36,16 @@ const HomeScreen = ( { navigation }: any ) =>
                     </RowComponent>
                 </SectionComponent>
                 <SectionComponent>
-                    <TextComponent text="Hi, Jason" />
-                    <TitleComponent text="Be Productive today" />
+                    <RowComponent>
+                        <View style={{ flex: 1 }}>
+                            <TextComponent text={`Hi, ${ user?.email }`} />
+                            <TitleComponent text="Be Productive today" />
+                        </View>
+                        <TouchableOpacity onPress={async () => auth().signOut()}>
+                            <Logout size={24} color={colors.desc} />
+                        </TouchableOpacity>
+                    </RowComponent>
+
                 </SectionComponent>
                 <SectionComponent>
                     <RowComponent

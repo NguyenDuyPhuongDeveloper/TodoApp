@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, StyleProp, TextStyle, Platform } from 'react-native'
 import React from 'react'
 import { globalStyles } from '../styles/globalStyles'
 import { fontFamilies } from '../constants/fontFamilies';
@@ -11,14 +11,36 @@ interface Props
     size?: number;
     font?: string;
     color?: string;
+    styles?: StyleProp<TextStyle>;
+    height?: number;
 }
 const TitleComponent = ( props: Props ) =>
 {
-    const { text, size, font, color } = props;
+    const { text, size, font, color, styles, height } = props;
+    const weight: any =
+        Platform.OS === 'ios'
+            ? font
+                ? {
+                    fontWeight: font,
+                }
+                : { fontWeight: fontFamilies.bold }
+            : {};
     return (
         <TextComponent
             size={size ?? 20}
             font={font ?? fontFamilies.semiBold}
+            styles={[
+                globalStyles.text,
+                weight,
+                {
+                    fontFamily: font ?? fontFamilies.semiBold,
+                    fontSize: size ?? 16,
+                    lineHeight: height ? height : size ? size + 4 : 20,
+                    color: color ?? colors.text,
+                    flex: 0
+                },
+                styles
+            ]}
             color={color}
             text={text}
         />
