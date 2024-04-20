@@ -2086,6 +2086,11 @@
     "@types/prop-types" "*"
     csstype "^3.0.2"
 
+"@types/rn-fetch-blob@^1.2.7":
+  version "1.2.7"
+  resolved "https://registry.npmjs.org/@types/rn-fetch-blob/-/rn-fetch-blob-1.2.7.tgz"
+  integrity sha512-pPYjtScarEx02GjJQXd4tl8AkwqyVuqdUXlRVhowxIYf3zAbDvifOCrhDJ0sm61mHkLAB8HtxqkiPG+7ospxvg==
+
 "@types/semver@^7.3.12":
   version "7.5.8"
   resolved "https://registry.npmjs.org/@types/semver/-/semver-7.5.8.tgz"
@@ -5906,6 +5911,13 @@ react-native-date-picker@^5.0.1:
   version "5.0.1"
   resolved "https://registry.npmjs.org/react-native-date-picker/-/react-native-date-picker-5.0.1.tgz"
   integrity sha512-0AzGE94jugCPGQM3YOgH3lF85QDOiN1/5KAY30rgQB3c6UI1pQNoU9txyxj9UdcRdcAxc1BSy30OEekL0+3ZQw==
+
+react-native-document-picker@^9.1.2:
+  version "9.1.2"
+  resolved "https://registry.npmjs.org/react-native-document-picker/-/react-native-document-picker-9.1.2.tgz"
+  integrity sha512-7ll4tIH2qiz6a+NIAvQRbPQCznDd+AstDjhW2BevKjz3WCYQuOIcQRPR8X5vbkJ+pFc2ZAak6y2wSCvTJ4BYLQ==
+  dependencies:
+    invariant "^2.2.4"
 
 react-native-gesture-handler@*:
   version "2.16.0"

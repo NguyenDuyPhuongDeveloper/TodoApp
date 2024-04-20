@@ -1,0 +1,5 @@
+Từ folder dự án 
+- chạy lệnh: npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
+Vào thư mục android
+- chạy lệnh: ./gradlew assembleRelease
+File apk sẽ nằm trong : android/app/build/outputs/apk/release/
