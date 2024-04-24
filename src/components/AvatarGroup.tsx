@@ -5,8 +5,14 @@ import TextComponent from './TextComponent';
 import { colors } from '../constants/colors';
 import { fontFamilies } from '../constants/fontFamilies';
 
-const AvatarGroup = () =>
+interface Props
 {
+  uids: string[];
+}
+
+const AvatarGroup = ( props: Props ) =>
+{
+  const { uids } = props;
   const imageStyle = {
     height: 32,
     width: 32,

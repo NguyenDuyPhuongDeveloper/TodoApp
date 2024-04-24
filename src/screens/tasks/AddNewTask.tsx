@@ -19,13 +19,15 @@ import ButtonComponent from '../../components/ButtonComponent'
 import storage from '@react-native-firebase/storage'
 
 const initValue: TaskModel = {
+    id: '',
     title: '',
     description: '',
     dueDate: new Date(),
     start: new Date(),
     end: new Date(),
     uids: [],
-    fileUrls: []
+    fileUrls: [],
+    progress: '',
 }
 
 
